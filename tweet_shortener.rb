@@ -13,10 +13,11 @@ ShortForms = {
               }
 
 def word_substituter(tweet)
+  shortened_tweet = tweet.dup
   ShortForms.each do |word, replacement|
-    tweet.gsub!(/\b#{word}\b/i, replacement) if tweet.include?(word)
+    shortened_tweet.gsub!(/\b#{word}\b/i, replacement) if tweet.include?(word)
   end
-  tweet
+  shortened_tweet
 end
 
 def bulk_tweet_shortener(tweets)
@@ -35,7 +36,7 @@ end
 
 def shortened_tweet_truncator(tweet)
   if word_substituter(tweet).length > 140
-    word_substituter(tweet)[0..136] + (' ...')
+    word_substituter(tweet)[0..136] + ('...')
   else
     tweet
   end
