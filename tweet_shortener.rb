@@ -13,9 +13,8 @@ ShortForms = {
               }
 
 def word_substituter(tweet)
-  shortened_tweet = tweet.dup
   ShortForms.each do |word, replacement|
-    shortened_tweet.gsub!(/\b#{word}\b/i, replacement) if tweet.include?(word)
+    shortened_tweet = tweet.gsub(/\b#{word}\b/i, replacement) if tweet.include?(word)
   end
   shortened_tweet
 end
