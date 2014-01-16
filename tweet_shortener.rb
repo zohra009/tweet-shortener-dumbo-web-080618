@@ -1,16 +1,16 @@
 # Write your code here.
 
 ShortForms = {
-                "too" => "2",
-                "to" => "2",
-                "two" =>"2",
-                "four" => "4",
-                "for" => "4",
-                "be" => "b",
-                "you" => "u",
-                "at" => "@",
-                "and" => "&"
-              }
+  "too" => "2",
+  "to" => "2",
+  "two" =>"2",
+  "four" => "4",
+  "for" => "4",
+  "be" => "b",
+  "you" => "u",
+  "at" => "@",
+  "and" => "&"
+}
 
 def word_substituter(tweet)
   ShortForms.each do |word, replacement|
@@ -40,8 +40,3 @@ def shortened_tweet_truncator(tweet)
     tweet
   end
 end
-
-
-
-
-
