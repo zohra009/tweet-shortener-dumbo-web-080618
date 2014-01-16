@@ -18,14 +18,14 @@ describe 'tweet shortener' do
 
   # Question 1
   describe '#word_substituter' do
-    it 'should replace long words with their expected short form' do
+    it 'replaces long words with their expected short form' do
       expect(word_substituter(tweet_one)).to eq(tweet_one_short)
     end
   end
 
   # Question 2
   describe '#bulk_tweet_shortener' do  
-    it 'should shorten each tweet and print the results' do
+    it 'shortens each tweet and prints the results' do
       expect($stdout).to receive(:puts).with(tweet_one_short)
       expect($stdout).to receive(:puts).with(tweet_two_short)
       expect($stdout).to receive(:puts).with(tweet_three_short)
@@ -37,7 +37,7 @@ describe 'tweet shortener' do
 
   # Question 3
   describe '#selective_tweet_shortener' do
-    it 'should only shorten tweets longer than 140 characters' do
+    it 'shortens tweets longer than 140 characters only' do
       expect(selective_tweet_shortener(tweet_one).length).to be < tweet_one.length 
       expect(selective_tweet_shortener(tweet_two).length).to be == tweet_two.length
       expect(selective_tweet_shortener(tweet_three).length).to be < tweet_three.length
@@ -48,11 +48,11 @@ describe 'tweet shortener' do
 
   # Question 4
   describe '#shortened_tweet_truncator' do    
-    it 'should truncate tweets over 140 characters after shortening' do
+    it 'truncates tweets over 140 characters after shortening' do
       expect(shortened_tweet_truncator(tweet_three).length).to be == 140
     end
 
-    it 'should not truncate tweets shorter than 140 characters.' do
+    it 'does not shorten tweets shorter than 140 characters.' do
       expect(shortened_tweet_truncator(tweet_one_short).length).to be == tweet_one_short.length 
     end
   end
