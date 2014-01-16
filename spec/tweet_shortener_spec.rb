@@ -58,6 +58,3 @@ describe 'tweet shortener' do
   end
 
 end
-
-
-
