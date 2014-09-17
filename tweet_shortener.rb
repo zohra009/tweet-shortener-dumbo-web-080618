@@ -1,6 +1,6 @@
 # Write your code here.
 
-ShortForms = {
+SHORT_FORMS = {
   "too" => "2",
   "to" => "2",
   "two" =>"2",
@@ -13,10 +13,12 @@ ShortForms = {
 }
 
 def word_substituter(tweet)
-  ShortForms.each do |word, replacement|
-    shortened_tweet = tweet.gsub(/\b#{word}\b/i, replacement) if tweet.include?(word)
+  SHORT_FORMS.each do |word, replacement|
+    if tweet.include?(word)
+      tweet.gsub!(/\b#{word}\b/i, replacement)
+    end
   end
-  shortened_tweet
+  tweet
 end
 
 def bulk_tweet_shortener(tweets)
