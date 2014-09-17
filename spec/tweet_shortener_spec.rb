@@ -1,4 +1,5 @@
 require 'spec_helper'
+require 'pry'
 
 describe 'tweet shortener' do
 
@@ -37,13 +38,20 @@ describe 'tweet shortener' do
 
   # Question 3
   describe '#selective_tweet_shortener' do
-    it 'shortens tweets longer than 140 characters only' do
-      expect(selective_tweet_shortener(tweet_one).length).to be < tweet_one.length 
-      expect(selective_tweet_shortener(tweet_two).length).to be == tweet_two.length
-      expect(selective_tweet_shortener(tweet_three).length).to be < tweet_three.length
-      expect(selective_tweet_shortener(tweet_four).length).to be == tweet_four.length
-      expect(selective_tweet_shortener(tweet_five).length).to be < tweet_five.length
+    it "shortens tweets that are more than 140 characters" do
+      tweet_one_length = tweet_one.length
+      tweet_three_length = tweet_three.length
+      tweet_five_length = tweet_five.length
+      expect(selective_tweet_shortener(tweet_one).length).to be < tweet_one_length
+      expect(selective_tweet_shortener(tweet_three).length).to be < tweet_three_length
+      expect(selective_tweet_shortener(tweet_five).length).to be < tweet_five_length
     end
+
+    it "does not shorten tweets that are less than 130 characters" do
+      expect(selective_tweet_shortener(tweet_two).length).to be == tweet_two.length
+      expect(selective_tweet_shortener(tweet_four).length).to be == tweet_four.length
+    end
+
   end
 
   # Question 4
