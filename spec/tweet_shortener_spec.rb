@@ -38,12 +38,9 @@ describe 'tweet shortener' do
   # Question 3
   describe '#selective_tweet_shortener' do
     it "shortens tweets that are more than 140 characters" do
-      tweet_one_length = tweet_one.length
-      tweet_three_length = tweet_three.length
-      tweet_five_length = tweet_five.length
-      expect(selective_tweet_shortener(tweet_one).length).to be < tweet_one_length
-      expect(selective_tweet_shortener(tweet_three).length).to be < tweet_three_length
-      expect(selective_tweet_shortener(tweet_five).length).to be < tweet_five_length
+      expect(selective_tweet_shortener(tweet_one).length).to be < tweet_one.length
+      expect(selective_tweet_shortener(tweet_three).length).to be < tweet_three.length
+      expect(selective_tweet_shortener(tweet_five).length).to be < tweet_five.length
     end
 
     it "does not shorten tweets that are less than 130 characters" do

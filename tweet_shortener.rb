@@ -13,6 +13,7 @@ SHORT_FORMS = {
 }
 
 def word_substituter(tweet)
+  tweet = tweet.dup
   SHORT_FORMS.each do |word, replacement|
     if tweet.include?(word)
       tweet.gsub!(/\b#{word}\b/i, replacement)
