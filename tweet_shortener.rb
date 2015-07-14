@@ -1,6 +1,6 @@
 # Write your code here.
-
-SHORT_FORMS = {
+def dictionary
+dictionary = {
   "too" => "2",
   "to" => "2",
   "two" =>"2",
@@ -11,16 +11,33 @@ SHORT_FORMS = {
   "at" => "@",
   "and" => "&"
 }
+end
+
+# You can use regex or, check out the solution below that
+# def word_substituter(tweet)
+#   tweet = tweet.dup
+#   dictionary.each do |word, replacement|
+#     if tweet.include?(word)
+#       tweet.gsub!(/\b#{word}\b/i, replacement)
+#     end
+#   end
+#   tweet
+# end
+
 
 def word_substituter(tweet)
-  tweet = tweet.dup
-  SHORT_FORMS.each do |word, replacement|
-    if tweet.include?(word)
-      tweet.gsub!(/\b#{word}\b/i, replacement)
+  new_words = tweet.split(" ").collect do |word|
+    if dictionary.keys.include?(word.downcase)
+      word = dictionary[word.downcase]
+    else
+      word
     end
   end
-  tweet
+
+  new_words.join(" ")
+
 end
+
 
 def bulk_tweet_shortener(tweets)
   tweets.each do |tweet|
