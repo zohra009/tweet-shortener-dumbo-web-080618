@@ -1,18 +1,17 @@
----
-  tags: hashes, iteration, regex
-  languages: ruby
-  resources: 2
----
+# Manipulating Strings and Hashes: Tweet Shortener
 
-# Tweet Shortener
+## Objectives
 
-### Skills: Regular Expressions, iteration, hashes
+1. Practice iterating over hashes
+2. Practice manipulating strings
+
 
 ## Instructions
 
 A client has hired you to automatically post some of their brand messages to twitter, but the problem is that some of the tweets are too long. Your job is to automatically shorten them by replacing longer words with shorter representations (i.e. "two" becomes "2").
 
-You'll want to write a method that will take a tweet, search it for words that you can substitute, and return a substituted string tweet. For instance, the tweet "Hello to you, I'm at home" would become "Hi 2 u, I'm @ home". The client has provided the following acceptable substitutes.
+* First, write a method, `dictionary`, that contains the words-to-be-substituted and their substitutes. The original words from the list below will be the keys. The substitute of a particular word becomes that key's value. You will use this hash in later methods to look up words and replace them with their substitues. 
+* Here is the list of words and their substitutes:
 
 ```
 "hello" becomes 'hi'
@@ -24,8 +23,9 @@ You'll want to write a method that will take a tweet, search it for words that y
 "and" becomes "&"
 ```
 
-and here is the list of tweets:
+* Here is the list of tweets that you'll be shortening. They are contained in the spec file and the test suite will be passed into the methods you build as arguments. 
 
+  
   >1. "Hey guys, can anyone teach me how to be cool? I really want to be the best at everything, you know what I mean? Tweeting is super fun you guys!!!!"
 
   >2. "OMG you guys, you won't believe how sweet my kitten is. My kitten is like super cuddly and too cute to be believed right?"
@@ -36,20 +36,33 @@ and here is the list of tweets:
 
   >5. "New game. Middle aged tweet followed by #youngPeopleHashTag Example: Gotta get my colonoscopy and mammogram soon. Prevention is key! #swag"
 
-1. Write a method to shorten a string based on the allowed substitutes
+### Methods:
 
-2. Write a method that iterates over the list of tweets, shortens them, and prints the results to the screen
+1. Write a method, `word_substituter` that takes in a string of a tweet as an argument and shortens that string based on the allowed substitutes. Use your `dictionary` method that contains you dictionary hash to compare the words in the tweet against the keys in the hash. If there are any matches, replace the word in the tweet with the associated substitute from the hash. 
+  * **Hint:** How can you iterate over every word in a tweet and compare it to the hash keys? Convert the tweet into an array to enable this. Then, make sure to convert it back into a string to return the shortened tweet at the end of the method.
+  * **Hint:** How can you grab all of the keys of the hash for the purpose of comparing them to the words in the tweet? Use the `.keys` method. 
 
-  hint: you'll need a way to look up each word and see if it has a substitution
+2. Write a method, `bulk_tweet_shortener` that takes in an array of tweets, iterates over them, shortens them, and `puts` out the results to the screen. 
+  * **Hint:** You already wrote a method that shortens tweets. Use it!
+  * **Hint:** Remember that you can `puts` out the result of a method by putting `puts` in front of the method call. 
+
+
 
   Now the client has come back to you. They love the program, but they noticed that even tweets that are under 140 characters are being shortened. Now they want you to only shorten the tweet if it's too long.
 
-3. Write a new method that only does the substitutions if the tweet is longer than 140 characters. If the tweet is 140 characters or shorter, just return the original tweet.
+3. Write a new method, `selective_tweet_shortener`, that only does the substitutions if the tweet is longer than 140 characters. If the tweet is 140 characters or shorter, just return the original tweet.
 
   Things are going great, but you're noticing that some tweets are too long still, even after substituting shorter words. Being the conscientious developer that you are, you talk to the client about this scenario and decide together that the best thing to do is just truncate the string to 140 characters if it's still too long after you do the substitution.
   
-4. Write another method that truncates the tweet to 140 characters with an ellipsis if it's still too long after substitution. E.g. "Random Passage satisfies the craving for those details that ..."
+4. Write another method, `shortened_tweet_truncator`, that truncates the tweet to 140 characters with an ellipsis (...) if it's still too long after substitution. E.g. "Random Passage satisfies the craving for those details that ..."
+  * **Hint:** Strings are indexed like arrays. That means you can return string index elements, or a set of string index elements, using the `[]` method. For example: 
 
-## Resources
-* [Programming Ruby 1.9](http://books.flatironschool.com/books/11) - [Changing Strings with Patterns](http://books.flatironschool.com/books/11), page 110
-* [Programming Ruby 1.9](http://books.flatironschool.com/books/11) - [Enumerable Module: include?](http://books.flatironschool.com/books/11), page 465
+```ruby
+string = "Hi there, I am a string in this interesting and informative example"
+string[0]
+# => "H"
+
+string[0..10]
+# => "Hi there, I"
+```
+
