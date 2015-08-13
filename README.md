@@ -38,7 +38,7 @@ A client has hired you to automatically post some of their brand messages to twi
 
 ### Methods:
 
-1. Write a method, `word_substituter` that takes in a string of a tweet as an argument and shortens that string based on the allowed substitutes. Use your `dictionary` method that contains you dictionary hash to compare the words in the tweet against the keys in the hash. If there are any matches, replace the word in the tweet with the associated substitute from the hash. 
+1. Write a method, `word_substituter` that takes in a string of a tweet as an argument and shortens that string based on the allowed substitutes. Use your `dictionary` method that contains your dictionary hash to compare the words in the tweet against the keys in the hash. If there are any matches, replace the word in the tweet with the associated substitute from the hash. 
   * **Hint:** How can you iterate over every word in a tweet and compare it to the hash keys? Convert the tweet into an array to enable this. Then, make sure to convert it back into a string to return the shortened tweet at the end of the method.
   * **Hint:** How can you grab all of the keys of the hash for the purpose of comparing them to the words in the tweet? Use the `.keys` method. 
 
