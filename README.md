@@ -66,3 +66,5 @@ string[0..10]
 # => "Hi there, I"
 ```
 
+
+<a href='https://learn.co/lessons/tweet-shortener' data-visibility='hidden'>View this lesson on Learn.co</a>
