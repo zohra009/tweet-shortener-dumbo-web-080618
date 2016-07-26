@@ -10,7 +10,7 @@
 
 A client has hired you to automatically post some of their brand messages to twitter, but the problem is that some of the tweets are too long. Your job is to automatically shorten them by replacing longer words with shorter representations (i.e. "two" becomes "2").
 
-* First, write a method, `dictionary`, that contains the words-to-be-substituted and their substitutes. The original words from the list below will be the keys. The substitute of a particular word becomes that key's value. You will use this hash in later methods to look up words and replace them with their substitues. 
+* First, write a method, `dictionary`, that contains the words-to-be-substituted and their substitutes. The original words from the list below will be the keys. The substitute of a particular word becomes that key's value. You will use this hash in later methods to look up words and replace them with their substitutes. 
 * Here is the list of words and their substitutes:
 
 ```
@@ -66,3 +66,7 @@ string[0..10]
 # => "Hi there, I"
 ```
 
+
+<p data-visibility='hidden'>View <a href='https://learn.co/lessons/tweet-shortener' title='Manipulating Strings and Hashes: Tweet Shortener'>Manipulating Strings and Hashes: Tweet Shortener</a> on Learn.co and start learning to code for free.</p>
+
+<p class='util--hide'>View <a href='https://learn.co/lessons/tweet-shortener'>Iterating and Manipulating 1</a> on Learn.co and start learning to code for free.</p>
