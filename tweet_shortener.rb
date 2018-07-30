@@ -51,7 +51,3 @@ def dictionary
       end
     end.join(" ")
   end
-
-  
-
-  
