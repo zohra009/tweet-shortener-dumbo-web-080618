@@ -50,4 +50,4 @@ def dictionary
         phrase
       end
     end.join(" ")
-  end
+end
