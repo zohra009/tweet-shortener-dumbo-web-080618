@@ -14,6 +14,7 @@ def dictionary
     "at" => "@",
     "and" => "&",
   }
+end 
   def word_substituter(tweet)
     # replaces long words with their expected short form
 
@@ -51,3 +52,4 @@ def dictionary
       end
     end.join(" ")
   end
+  
